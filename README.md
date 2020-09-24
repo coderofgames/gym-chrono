@@ -73,7 +73,7 @@ conda activate magic_tutorial
 ```
 pip install -e .
 ```
-- Note: If you would like to remove this Anaconda environment when you are done, use `conda remove --name magic_tutorial --all`.
+- Note: If you would like to remove this Anaconda environment at a later date, just use `conda remove --name magic_tutorial --all`.
 
 ### 3. Install the baselines repository and modules
 3.1 Clone the repository. Note that this should be at the same directory level as where the gym-chrono repository is.
