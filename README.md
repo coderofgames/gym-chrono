@@ -58,24 +58,24 @@ git clone https://github.com/projectchrono/gym-chrono.git
 cd gym-chrono
 ```
 
-2.1 Checkout the branch with the .yml Anaconda environment file.
+2.2 Checkout the branch with the .yml Anaconda environment file.
 ```
 git checkout tutorial_solution
 ```
 
-2.2. Use the .yml to create a new Anaconda environment with the necessary packages.
+2.3. Use the .yml to create a new Anaconda environment with the necessary packages.
 ```
 conda env create -f conda_env_gym_chrono_tutorial.yml
 ```
-2.3. Confirm the new environment exists on your system. It should be called "magic_tutorial".
+2.4. Confirm the new environment exists on your system. It should be called "magic_tutorial".
 ```
 conda env list
 ```
-2.4. Activate the new environment.
+2.5. Activate the new environment.
 ```
 conda activate gym_chrono_tutorial
 ```
-2.5 Complete gym-chrono installation.
+2.6 Complete gym-chrono installation.
 ```
 pip install -e .
 ```
