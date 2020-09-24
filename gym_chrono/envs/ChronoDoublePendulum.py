@@ -11,17 +11,28 @@ import sys
 from gym_chrono.envs.ChronoBase import  ChronoBaseEnv
 
 
-class ChronoPendulum(ChronoBaseEnv):
+# ---------------------------------------------------------------------
+# Tutorial - Rename class.
+class ChronoDoublePendulum(ChronoBaseEnv):
+# ---------------------------------------------------------------------
    def __init__(self):
       ChronoBaseEnv.__init__(self)
       #self._set_observation_space(np.ndarray([4,]))
       #self.action_space = np.zeros([4,])
-      low = np.full(4, -1000)
-      high = np.full(4, 1000)
+      
+# ---------------------------------------------------------------------
+      # TUTORIAL - Update model dof
+      low = np.full(6, -1000)
+      high = np.full(6, 1000)
+# ---------------------------------------------------------------------
+
       self.observation_space = spaces.Box(low, high, dtype=np.float32)
       self.action_space = spaces.Box(low=-1.0, high=1.0, shape=(1,), dtype=np.float32)
       self.info =  {"timeout": 100000}
       self.timestep = 0.01
+
+
+
     # ---------------------------------------------------------------------
     #
     #  Create the simulation system and add items
@@ -66,7 +77,7 @@ class ChronoPendulum(ChronoBaseEnv):
       #print("reset")
       self.isdone = False
       self.rev_pend_sys.Clear()
-            # create it
+      # create it
       self.body_rod = chrono.ChBody()
     # set initial position
       self.body_rod.SetPos(chrono.ChVectorD(0, self.size_rod_y/2, 0 ))
@@ -74,6 +85,19 @@ class ChronoPendulum(ChronoBaseEnv):
       self.body_rod.SetMass(self.mass_rod)
 
       self.body_rod.SetInertiaXX(chrono.ChVectorD(self.inertia_rod_x,self.inertia_rod_y,self.inertia_rod_x))
+
+# ---------------------------------------------------------------------
+      # TUTORIAL - Create the second rod. 
+      # create it
+      self.body_rod_2 = chrono.ChBody()
+    # set initial position
+      self.body_rod_2.SetPos(chrono.ChVectorD(0, self.size_rod_y/2+self.size_rod_y, 0 ))
+    # set mass properties
+      self.body_rod_2.SetMass(self.mass_rod)
+      self.body_rod_2.SetInertiaXX(chrono.ChVectorD(self.inertia_rod_x,self.inertia_rod_y,self.inertia_rod_x))
+# ---------------------------------------------------------------------
+     
+
 
 
       self.cyl_base1= chrono.ChVectorD(0, -self.size_rod_y/2, 0 )
@@ -87,6 +111,12 @@ class ChronoPendulum(ChronoBaseEnv):
       self.body_rod.AddAsset(self.body_rod_shape)
       self.rev_pend_sys.Add(self.body_rod)
 
+
+# ---------------------------------------------------------------------
+      # TUTORIAL - Add shape to the second rod.
+      self.body_rod_2.AddAsset(self.body_rod_shape)
+      self.rev_pend_sys.Add(self.body_rod_2)
+# ---------------------------------------------------------------------
 
       self.body_floor = chrono.ChBody()
       self.body_floor.SetBodyFixed(True)
@@ -141,7 +171,23 @@ class ChronoPendulum(ChronoBaseEnv):
       self.pin_joint = chrono.ChLinkLockRevolute()
       self.pin_joint.Initialize(self.rod_pin, self.table_pin)
       self.rev_pend_sys.Add(self.pin_joint)
+
+# ---------------------------------------------------------------------
+      # TUTORIAL - Create the new pin and joint
+      self.rod_pin_2 = chrono.ChMarker()
+      self.body_rod_2.AddMarker(self.rod_pin_2)
+      self.rod_pin_2.Impose_Abs_Coord(chrono.ChCoordsysD(chrono.ChVectorD(0,self.size_rod_y,0)))
+ 
+      self.table_pin_2 = chrono.ChMarker()
+      self.body_table.AddMarker(self.table_pin_2)
+      self.table_pin_2.Impose_Abs_Coord(chrono.ChCoordsysD(chrono.ChVectorD(0,self.size_rod_y,0)))
       
+      self.pin_joint_2 = chrono.ChLinkLockRevolute()
+      self.pin_joint_2.Initialize(self.rod_pin_2, self.table_pin_2)
+      self.rev_pend_sys.Add(self.pin_joint_2)
+# ---------------------------------------------------------------------
+
+
       if self.render_setup:
              self.myapplication.AssetBindAll()
              self.myapplication.AssetUpdateAll()	
@@ -159,6 +205,11 @@ class ChronoPendulum(ChronoBaseEnv):
        self.actuator.SetForceFunction(self.ac)
        self.omega = self.pin_joint.GetRelWvel().Length()  
        
+# ---------------------------------------------------------------------
+       # TUTORIAL - Get angle of second rod
+       self.omega_2 = self.pin_joint_2.GetRelWvel().Length()
+# ---------------------------------------------------------------------
+
        self.rev_pend_sys.DoStepDynamics(self.timestep)
        self.rew = 1.0
                   
@@ -172,7 +223,10 @@ class ChronoPendulum(ChronoBaseEnv):
    def get_ob(self):
            
 
-          self.state = [self.link_slider.GetDist(), self.link_slider.GetDist_dt(), self.pin_joint.GetRelAngle(), self.omega]
+# ---------------------------------------------------------------------
+          # TUTORIAL - Update state array.
+          self.state = [self.link_slider.GetDist(), self.link_slider.GetDist_dt(), self.pin_joint.GetRelAngle(), self.omega, self.pin_joint_2.GetRelAngle(), self.omega_2]
+# ---------------------------------------------------------------------
           return np.asarray(self.state)
 
                  
