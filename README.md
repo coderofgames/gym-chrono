@@ -40,7 +40,12 @@ A 6-DOF robotic arm (Comau Racer-3), the goal is minimizing the distance between
 6 actions (motor torques) and 18 observations (joints rotation, joints speed, end-effector position, target position).
 
 # Installation
-Please follow each step of these instructions. They will make an Anaconda environment that has all the packages you will need to work with gym-chrono.
+Please follow each step of these instructions. They will help you make an Anaconda environment that has all the packages you will need to work with gym-chrono.
+
+### Requirements
+1. Anaconda
+- To install, see the instructions [here](https://docs.anaconda.com/anaconda/install/).
+
 ### 1. Clone the gym-chrono repository.
 ```
 git clone https://github.com/projectchrono/gym-chrono.git
@@ -52,12 +57,12 @@ git clone https://github.com/projectchrono/gym-chrono.git
 cd gym-chrono
 ```
 
-2.1 Checkout the branch with the .yml.
+2.1 Checkout the branch with the .yml Anaconda environment file.
 ```
 git checkout tutorial_solution
 ```
 
-2.2. Use the .yml to create a new conda environment with the necessary packages.
+2.2. Use the .yml to create a new Anaconda environment with the necessary packages.
 ```
 conda env create -f conda_env_magic_tutorial.yml
 ```
