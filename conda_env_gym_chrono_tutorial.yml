@@ -73,4 +73,3 @@ dependencies:
     - pytest==6.0.2
     - toml==0.10.1
     - tqdm==4.49.0
-prefix: /Users/alexpletta/anaconda2/envs/gym_chrono_tutorial
