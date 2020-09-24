@@ -57,10 +57,23 @@ cd gym-chrono
 git checkout tutorial_solution
 ```
 
-2.2. Use the .yml to create a new conda environment with the necessary packages.
+2.2A. Use the .yml to create a new conda environment with the necessary packages.
 ```
 conda env create -f conda_env_magic_tutorial.yml
 ```
+
+2.2B. Alternatively, follow these instructions:
+```
+conda create -n conda_env_magic_tutorial python=3.7
+conda install -c anaconda tensorflow-gpu=1.14 --yes
+pip install gym
+# if Linux
+conda install mpi4py --yes
+conda install -c projectchrono/label/develop pychrono --yes
+# You will get an error because MuJoCo can't be installed. This is harmless.
+pip install baselines
+```
+
 2.3. Confirm the new environment exists on your system. It should be called "magic_tutorial".
 ```
 conda env list
@@ -89,7 +102,7 @@ pip install gym
 ```
 Then, install the PyChrono extension for Gym:
 ```bash
-git clone https://github.com/Benatti1991/gym-chrono
+git clone https://github.com/projectchrono/gym-chrono/
 cd gym-chrono
 pip install -e .
 ```
