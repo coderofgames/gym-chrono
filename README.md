@@ -43,8 +43,9 @@ A 6-DOF robotic arm (Comau Racer-3), the goal is minimizing the distance between
 Please follow each step of these instructions. They will help you make an Anaconda environment that has all the packages you will need to work with gym-chrono.
 
 ### Requirements
-1. Anaconda
-- To install, see the instructions [here](https://docs.anaconda.com/anaconda/install/).
+1. conda
+- You can check if you already have this by running `conda --version`. 
+- To install, see the instructions [here](https://docs.conda.io/projects/conda/en/latest/user-guide/install/).
 
 ### 1. Clone the gym-chrono repository.
 ```
