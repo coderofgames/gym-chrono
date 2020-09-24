@@ -40,7 +40,7 @@ A 6-DOF robotic arm (Comau Racer-3), the goal is minimizing the distance between
 6 actions (motor torques) and 18 observations (joints rotation, joints speed, end-effector position, target position).
 
 # Installation
-If you want to install Gym and Chrono in a virtual environment (Conda or VirtualEnv), don't forget to activate the environment first.
+Please follow each step of these instructions. They will make an Anaconda environment that has all the packages you will need to work with gym-chrono.
 ### 1. Clone the gym-chrono repository.
 ```
 git clone https://github.com/projectchrono/gym-chrono.git
@@ -73,8 +73,9 @@ conda activate magic_tutorial
 ```
 pip install -e .
 ```
+- Note: If you would like to remove this Anaconda environment when you are done, use `conda remove --name magic_tutorial --all`.
 
-### 3. Install baselines
+### 3. Install the baselines repository and modules
 3.1 Clone the repository. Note that this should be at the same directory level as where the gym-chrono repository is.
 - If you've been following along with the previous installation steps, you'll have to move out of the gym-chrono repository.
 ```
@@ -95,31 +96,8 @@ Your file structure should now look like this.
 pip install -e ./baselines/
 ```
 
-### 4. Tutorial
+### 4. Example
+Great! Now we can run an example. The line below will train the ant environment using the PPOalgorithm in [OpenAI Baselines](https://github.com/openai/baselines)
 ```
-python -m baselines.run --alg=ppo2 --env=gym_chrono.envs:chrono_double_pendulum-v0 --network=mlp --num_timesteps=2e7 --ent_coef=0.1 --num_hidden=32 --num_layers=3 --value_network=copy
-```
-
-
-### 3. Example
-Training the ant environment using the PPOalgorithm in [OpenAI Baselines](https://github.com/openai/baselines)
-```bash
 python -m baselines.run --alg=ppo2 --env=gym_chrono.envs:chrono_ant-v0 --network=mlp --num_timesteps=2e7 --ent_coef=0.1 --num_hidden=32 --num_layers=3 --value_network=copy
 ```
-
-### Gym and Chrono
-To install Chrono follow [these](http://api.projectchrono.org/development/pychrono_installation.html) instructions. 
-Install Gym. Obviously, OpenAI Gym is a prerequisite for gym-chrono. 
-```bash
-pip install gym
-```
-Then, install the PyChrono extension for Gym:
-```bash
-git clone https://github.com/Benatti1991/gym-chrono
-cd gym-chrono
-pip install -e .
-```
-
-
-
-
