@@ -41,13 +41,13 @@ A 6-DOF robotic arm (Comau Racer-3), the goal is minimizing the distance between
 
 # Installation
 If you want to install Gym and Chrono in a virtual environment (Conda or VirtualEnv), don't forget to activate the environment first.
-### 1. Clone gym-chrono
+### 1. Clone the gym-chrono repository.
 ```
 git clone https://github.com/projectchrono/gym-chrono.git
 ```
 
 ### 2. Anaconda Environment Setup
-2.1 Move into the repository.
+2.1 Move into the gym-chrono repository.
 ```
 cd gym-chrono
 ```
@@ -69,6 +69,26 @@ conda env list
 ```
 conda activate magic_tutorial
 ```
+2.5 Complete gym-chrono installation.
+```
+pip install -e .
+```
+
+### 3. Install baselines
+3.1 Clone the repository. Note that this should be at the same directory level as where the gym-chrono repository is. 
+```
+git clone https://github.com/openai/baselines.git
+```
+```
+.
+├── baselines
+└── gym-chrono
+```
+3.2 Complete baselines installation.
+```
+pip install -e ./baselines/
+```
+
 ### 4. Tutorial
 ```
 python -m baselines.run --alg=ppo2 --env=gym_chrono.envs:chrono_double_pendulum-v0 --network=mlp --num_timesteps=2e7 --ent_coef=0.1 --num_hidden=32 --num_layers=3 --value_network=copy
