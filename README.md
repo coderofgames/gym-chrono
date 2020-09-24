@@ -107,7 +107,7 @@ Great! Now we can run an example. The line below will train the ant environment 
 python -m baselines.run --alg=ppo2 --env=gym_chrono.envs:chrono_ant-v0 --network=mlp --num_timesteps=2e7 --ent_coef=0.1 --num_hidden=32 --num_layers=3 --value_network=copy
 ```
 
-Sample output of first step:
+Sample output of first step (your numbers might be slightly different):
 
 <img src="https://github.com/projectchrono/chrono-web-assets/blob/master/Images/ant_example_output.png" width=200>
 
