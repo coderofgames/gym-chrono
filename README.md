@@ -54,7 +54,7 @@ cd gym-chrono
 
 2.1 Checkout the branch with the .yml.
 ```
-git checkout tutorial
+git checkout tutorial_solution
 ```
 
 2.2. Use the .yml to create a new conda environment with the necessary packages.
