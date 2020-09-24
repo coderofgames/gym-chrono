@@ -65,7 +65,7 @@ git checkout tutorial_solution
 
 2.2. Use the .yml to create a new Anaconda environment with the necessary packages.
 ```
-conda env create -f conda_env_magic_tutorial.yml
+conda env create -f conda_env_gym_chrono_tutorial.yml
 ```
 2.3. Confirm the new environment exists on your system. It should be called "magic_tutorial".
 ```
@@ -73,7 +73,7 @@ conda env list
 ```
 2.4. Activate the new environment.
 ```
-conda activate magic_tutorial
+conda activate gym_chrono_tutorial
 ```
 2.5 Complete gym-chrono installation.
 ```
@@ -118,9 +118,9 @@ conda deactivate
 ```
 - To re-activate the environment,
 ```
-conda activate magic_tutorial
+conda activate gym_chrono_tutorial
 ```
 - If you would like to completely remove this Anaconda environment at a later date, use the following. Note that you must deactivate the environment first.
 ```
-conda remove --name magic_tutorial --all
+conda remove --name gym_chrono_tutorial --all
 ```
