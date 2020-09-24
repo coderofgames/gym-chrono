@@ -73,7 +73,6 @@ conda activate magic_tutorial
 ```
 pip install -e .
 ```
-- Note: If you would like to remove this Anaconda environment at a later date, just use `conda remove --name magic_tutorial --all`.
 
 ### 3. Install the baselines repository and modules
 3.1 Clone the repository. Note that this should be at the same directory level as where the gym-chrono repository is.
@@ -100,4 +99,18 @@ pip install -e ./baselines/
 Great! Now we can run an example. The line below will train the ant environment using the PPOalgorithm in [OpenAI Baselines](https://github.com/openai/baselines)
 ```
 python -m baselines.run --alg=ppo2 --env=gym_chrono.envs:chrono_ant-v0 --network=mlp --num_timesteps=2e7 --ent_coef=0.1 --num_hidden=32 --num_layers=3 --value_network=copy
+```
+
+### Other
+- To get out of the Anaconda environment,
+```
+conda deactivate
+```
+- To re-activate the environment,
+```
+conda activate magic_tutorial
+```
+- If you would like to completely remove this Anaconda environment at a later date,
+```
+conda remove --name magic_tutorial --all
 ```
