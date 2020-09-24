@@ -43,7 +43,7 @@ A 6-DOF robotic arm (Comau Racer-3), the goal is minimizing the distance between
 If you want to install Gym and Chrono in a virtual environment (Conda or VirtualEnv), don't forget to activate the environment first.
 ### 1. Clone gym-chrono
 ```
-git clone https://github.com/Benatti1991/gym-chrono
+git clone https://github.com/projectchrono/gym-chrono.git
 ```
 
 ### 2. Anaconda Environment Setup
