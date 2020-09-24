@@ -1,4 +1,4 @@
-name: magic_tutorial
+name: gym_chrono_tutorial
 channels:
   - projectchrono/label/develop
   - defaults
@@ -73,4 +73,4 @@ dependencies:
     - pytest==6.0.2
     - toml==0.10.1
     - tqdm==4.49.0
-prefix: /Users/alexpletta/anaconda2/envs/magic_tutorial
+prefix: /Users/alexpletta/anaconda2/envs/gym_chrono_tutorial
