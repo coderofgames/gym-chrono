@@ -8,7 +8,7 @@ register(
 # ---------------------------------------------------------------------
 # TUTORIAL - Register the new simulation environment.
 register(
-    id='chrono_pendulum_2-v0',
+    id='chrono_double_pendulum-v0',
     entry_point='gym_chrono.envs:ChronoDoublePendulum') # NAme of the CLASS after the colon
 # ---------------------------------------------------------------------
 
