@@ -116,7 +116,7 @@ conda deactivate
 ```
 conda activate magic_tutorial
 ```
-- If you would like to completely remove this Anaconda environment at a later date,
+- If you would like to completely remove this Anaconda environment at a later date, use the following. Note that you must deactivate the environment first.
 ```
 conda remove --name magic_tutorial --all
 ```
