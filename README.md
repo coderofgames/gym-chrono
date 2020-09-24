@@ -41,6 +41,47 @@ A 6-DOF robotic arm (Comau Racer-3), the goal is minimizing the distance between
 
 # Installation
 If you want to install Gym and Chrono in a virtual environment (Conda or VirtualEnv), don't forget to activate the environment first.
+### 1. Clone gym-chrono
+```
+git clone https://github.com/projectchrono/gym-chrono.git
+```
+
+### 2. Anaconda Environment Setup
+2.1 Move into the repository.
+```
+cd gym-chrono
+```
+
+2.1 Checkout the branch with the .yml.
+```
+git checkout tutorial_solution
+```
+
+2.2. Use the .yml to create a new conda environment with the necessary packages.
+```
+conda env create -f conda_env_magic_tutorial.yml
+```
+2.3. Confirm the new environment exists on your system. It should be called "magic_tutorial".
+```
+conda env list
+```
+2.4. Activate the new environment.
+```
+conda activate magic_tutorial
+```
+### 4. Tutorial
+```
+python -m baselines.run --alg=ppo2 --env=gym_chrono.envs:chrono_double_pendulum-v0 --network=mlp --num_timesteps=2e7 --ent_coef=0.1 --num_hidden=32 --num_layers=3 --value_network=copy
+```
+
+
+### 3. Example
+Training the ant environment using the PPOalgorithm in [OpenAI Baselines](https://github.com/openai/baselines)
+```bash
+python -m baselines.run --alg=ppo2 --env=gym_chrono.envs:chrono_ant-v0 --network=mlp --num_timesteps=2e7 --ent_coef=0.1 --num_hidden=32 --num_layers=3 --value_network=copy
+```
+
+### Gym and Chrono
 To install Chrono follow [these](http://api.projectchrono.org/development/pychrono_installation.html) instructions. 
 Install Gym. Obviously, OpenAI Gym is a prerequisite for gym-chrono. 
 ```bash
@@ -53,10 +94,6 @@ cd gym-chrono
 pip install -e .
 ```
 
-# Example
-Training the ant environment using the PPOalgorithm in [OpenAI Baselines](https://github.com/openai/baselines)
-```bash
-python -m baselines.run --alg=ppo2 --env=gym_chrono.envs:chrono_ant-v0 --network=mlp --num_timesteps=2e7 --ent_coef=0.1 --num_hidden=32 --num_layers=3 --value_network=copy
-```
+
 
 
