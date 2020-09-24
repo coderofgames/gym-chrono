@@ -69,6 +69,17 @@ conda env list
 ```
 conda activate magic_tutorial
 ```
+### 4. Tutorial
+```
+python -m baselines.run --alg=ppo2 --env=gym_chrono.envs:chrono_double_pendulum-v0 --network=mlp --num_timesteps=2e7 --ent_coef=0.1 --num_hidden=32 --num_layers=3 --value_network=copy
+```
+
+
+### 3. Example
+Training the ant environment using the PPOalgorithm in [OpenAI Baselines](https://github.com/openai/baselines)
+```bash
+python -m baselines.run --alg=ppo2 --env=gym_chrono.envs:chrono_ant-v0 --network=mlp --num_timesteps=2e7 --ent_coef=0.1 --num_hidden=32 --num_layers=3 --value_network=copy
+```
 
 ### Gym and Chrono
 To install Chrono follow [these](http://api.projectchrono.org/development/pychrono_installation.html) instructions. 
@@ -83,10 +94,6 @@ cd gym-chrono
 pip install -e .
 ```
 
-# Example
-Training the ant environment using the PPOalgorithm in [OpenAI Baselines](https://github.com/openai/baselines)
-```bash
-python -m baselines.run --alg=ppo2 --env=gym_chrono.envs:chrono_ant-v0 --network=mlp --num_timesteps=2e7 --ent_coef=0.1 --num_hidden=32 --num_layers=3 --value_network=copy
-```
+
 
 
