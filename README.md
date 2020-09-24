@@ -75,10 +75,16 @@ pip install -e .
 ```
 
 ### 3. Install baselines
-3.1 Clone the repository. Note that this should be at the same directory level as where the gym-chrono repository is. 
+3.1 Clone the repository. Note that this should be at the same directory level as where the gym-chrono repository is.
+- If you've been following along with the previous installation steps, you'll have to move out of the gym-chrono repository.
+```
+cd ..
+```
+Then clone the baselines repository.
 ```
 git clone https://github.com/openai/baselines.git
 ```
+Your file structure should now look like this.
 ```
 .
 ├── baselines
