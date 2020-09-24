@@ -102,7 +102,7 @@ pip install -e ./baselines/
 ```
 
 ### 4. Example
-Great! Now we can run an example. The line below will train the ant environment using the PPOalgorithm in [OpenAI Baselines](https://github.com/openai/baselines)
+Great! Now we can run an example. The line below will train the ant environment using the PPOalgorithm in [OpenAI Baselines](https://github.com/openai/baselines).
 ```
 python -m baselines.run --alg=ppo2 --env=gym_chrono.envs:chrono_ant-v0 --network=mlp --num_timesteps=2e7 --ent_coef=0.1 --num_hidden=32 --num_layers=3 --value_network=copy
 ```
