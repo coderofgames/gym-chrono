@@ -44,8 +44,9 @@ Please follow each step of these instructions. They will help you make an Anacon
 
 ### Requirements
 1. conda
-- You can check if you already have this by running `conda --version`. 
+- You can check if you already have this by running `conda --version`.
 - To install, see the instructions [here](https://docs.conda.io/projects/conda/en/latest/user-guide/install/).
+- You can choose Anaconda or Miniconda; either will work.
 
 ### 1. Clone the gym-chrono repository.
 ```
