@@ -71,7 +71,6 @@ pip install gym
 conda install mpi4py --yes
 conda install -c projectchrono/label/develop pychrono --yes
 # You will get an error because MuJoCo can't be installed. This is harmless.
-pip install baselines
 ```
 
 2.3. Confirm the new environment exists on your system. It should be called "magic_tutorial".
