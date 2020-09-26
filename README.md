@@ -40,72 +40,95 @@ A 6-DOF robotic arm (Comau Racer-3), the goal is minimizing the distance between
 6 actions (motor torques) and 18 observations (joints rotation, joints speed, end-effector position, target position).
 
 # Installation
-If you want to install Gym and Chrono in a virtual environment (Conda or VirtualEnv), don't forget to activate the environment first.
-### 1. Clone gym-chrono
+Please follow each step of these instructions. They will help you make an Anaconda environment that has all the packages you will need to work with gym-chrono.
+
+### Requirements
+1. conda
+- You can check if you already have this by running `conda --version`.
+- To install, see the instructions [here](https://docs.conda.io/projects/conda/en/latest/user-guide/install/).
+- You can use Anaconda or Miniconda; either will work.
+
+### 1. Clone the gym-chrono repository.
 ```
 git clone https://github.com/projectchrono/gym-chrono.git
 ```
 
 ### 2. Anaconda Environment Setup
-2.1 Move into the repository.
+2.1 Move into the gym-chrono repository.
 ```
 cd gym-chrono
 ```
 
-2.1 Checkout the branch with the .yml.
+2.2 Checkout the branch with the .yml Anaconda environment file.
 ```
-git checkout tutorial_solution
-```
-
-2.2A. Use the .yml to create a new conda environment with the necessary packages.
-```
-conda env create -f conda_env_magic_tutorial.yml
+git checkout tutorial
 ```
 
-2.2B. Alternatively, follow these instructions:
+2.3.A. Use the .yml to create a new Anaconda environment with the necessary packages.
+```
+conda env create -f conda_env_gym_chrono_tutorial.yml
+```
+2.3.B. Alternatively, follow these instructions:
 ```
 conda create -n conda_env_magic_tutorial python=3.7
 conda install -c anaconda tensorflow-gpu=1.14 --yes
 pip install gym
-# if Linux
-conda install mpi4py --yes
 conda install -c projectchrono/label/develop pychrono --yes
-# You will get an error because MuJoCo can't be installed. This is harmless.
 ```
-
-2.3. Confirm the new environment exists on your system. It should be called "magic_tutorial".
+2.4. Confirm the new environment exists on your system. It should be called "magic_tutorial".
 ```
 conda env list
 ```
-2.4. Activate the new environment.
+2.5. Activate the new environment.
 ```
-conda activate magic_tutorial
+conda activate gym_chrono_tutorial
 ```
-### 4. Tutorial
+2.6 Complete gym-chrono installation.
 ```
-python -m baselines.run --alg=ppo2 --env=gym_chrono.envs:chrono_double_pendulum-v0 --network=mlp --num_timesteps=2e7 --ent_coef=0.1 --num_hidden=32 --num_layers=3 --value_network=copy
-```
-
-
-### 3. Example
-Training the ant environment using the PPOalgorithm in [OpenAI Baselines](https://github.com/openai/baselines)
-```bash
-python -m baselines.run --alg=ppo2 --env=gym_chrono.envs:chrono_ant-v0 --network=mlp --num_timesteps=2e7 --ent_coef=0.1 --num_hidden=32 --num_layers=3 --value_network=copy
-```
-
-### Gym and Chrono
-To install Chrono follow [these](http://api.projectchrono.org/development/pychrono_installation.html) instructions. 
-Install Gym. Obviously, OpenAI Gym is a prerequisite for gym-chrono. 
-```bash
-pip install gym
-```
-Then, install the PyChrono extension for Gym:
-```bash
-git clone https://github.com/projectchrono/gym-chrono/
-cd gym-chrono
 pip install -e .
 ```
 
+### 3. Install the baselines repository and modules
+3.1 Clone the repository. Note that this should be at the same directory level as where the gym-chrono repository is.
+- If you've been following along with the previous installation steps, you'll have to move out of the gym-chrono repository.
+```
+cd ..
+```
+Then clone the baselines repository.
+```
+git clone https://github.com/openai/baselines.git
+```
+Your file structure should now look like this.
+```
+.
+├── baselines
+└── gym-chrono
+```
+3.2 Complete baselines installation.
+```
+pip install -e ./baselines/
+```
 
+### 4. Example
+Great! Now we can run an example. The line below will train the ant environment using the PPOalgorithm in [OpenAI Baselines](https://github.com/openai/baselines).
+```
+python -m baselines.run --alg=ppo2 --env=gym_chrono.envs:chrono_ant-v0 --network=mlp --num_timesteps=2e7 --ent_coef=0.1 --num_hidden=32 --num_layers=3 --value_network=copy
+```
 
+Sample output of first step (your numbers might be slightly different):
 
+<img src="https://github.com/projectchrono/chrono-web-assets/blob/master/Images/ant_example_output.png" width=200>
+
+### Other
+- To get out of the Anaconda environment,
+```
+conda deactivate
+```
+- To re-activate the environment,
+```
+conda activate gym_chrono_tutorial
+```
+- If you would like to completely remove this Anaconda environment at a later date, use the following. Note that you must deactivate the environment first.
+```
+conda remove --name gym_chrono_tutorial --all
+```
