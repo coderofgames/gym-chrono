@@ -64,9 +64,16 @@ cd gym-chrono
 git checkout tutorial_solution
 ```
 
-2.3. Use the .yml to create a new Anaconda environment with the necessary packages.
+2.3.A. Use the .yml to create a new Anaconda environment with the necessary packages.
 ```
 conda env create -f conda_env_gym_chrono_tutorial.yml
+```
+2.3.B. Alternatively, follow these instructions:
+```
+conda create -n conda_env_magic_tutorial python=3.7
+conda install -c anaconda tensorflow-gpu=1.14 --yes
+pip install gym
+conda install -c projectchrono/label/develop pychrono --yes
 ```
 2.4. Confirm the new environment exists on your system. It should be called "magic_tutorial".
 ```
