@@ -3,7 +3,7 @@ from gym_chrono.envs.ChronoPendulum import ChronoPendulum
 
 # ---------------------------------------------------------------------
 # TUTORIAL - Import new simulation environment
-
+from gym_chrono.envs.ChronoDoublePendulum import ChronoDoublePendulum
 # ---------------------------------------------------------------------
 
 from gym_chrono.envs.ChronoAnt import  ChronoAnt
