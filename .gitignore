@@ -1,5 +1,5 @@
 # Ignore egg files.
 *.egg-info
 
-# Ignore pycache files
+# Ignore pycache files.
 *.pyc
