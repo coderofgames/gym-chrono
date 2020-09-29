@@ -3,13 +3,13 @@ from gym.envs.registration import register
 
 register(
     id='chrono_pendulum-v0',
-    entry_point='gym_chrono.envs:ChronoPendulum') # NAme of the CLASS after the colon
+    entry_point='gym_chrono.envs:ChronoPendulum') # Name of the CLASS after the colon
 
 # ---------------------------------------------------------------------
 # TUTORIAL - Register the new simulation environment.
 register(
     id='chrono_double_pendulum-v0',
-    entry_point='gym_chrono.envs:ChronoDoublePendulum') # NAme of the CLASS after the colon
+    entry_point='gym_chrono.envs:ChronoDoublePendulum') # Name of the CLASS after the colon
 # ---------------------------------------------------------------------
 
 
