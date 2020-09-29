@@ -1,0 +1,3 @@
+# Ignore egg files.
+*.egg-info
+
