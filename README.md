@@ -59,12 +59,12 @@ git clone https://github.com/projectchrono/gym-chrono.git
 cd gym-chrono
 ```
 
-2.2 Checkout the branch with the .yml Anaconda environment file.
+2.2 Checkout the branch with the .yml Conda environment file.
 ```
 git checkout tutorial_solution
 ```
 
-2.3.A. Use the .yml to create a new Anaconda environment with the necessary packages.
+2.3.A. Use the .yml to create a new Conda environment with the necessary packages.
 ```
 conda env create -f conda_env_gym_chrono_tutorial.yml
 ```
@@ -120,7 +120,7 @@ Sample output of first step (your numbers might be slightly different):
 <img src="https://github.com/projectchrono/chrono-web-assets/blob/master/Images/ant_example_output.png" width=200>
 
 ### Other
-- To get out of the Anaconda environment,
+- To get out of the Conda environment,
 ```
 conda deactivate
 ```
@@ -128,7 +128,7 @@ conda deactivate
 ```
 conda activate gym_chrono_tutorial
 ```
-- If you would like to completely remove this Anaconda environment at a later date, use the following. Note that you must deactivate the environment first.
+- If you would like to completely remove this Conda environment at a later date, use the following. Note that you must deactivate the environment first.
 ```
 conda remove --name gym_chrono_tutorial --all
 ```
