@@ -79,9 +79,9 @@ class ChronoDoublePendulum(ChronoBaseEnv):
       self.rev_pend_sys.Clear()
       # create it
       self.body_rod = chrono.ChBody()
-    # set initial position
+      # set initial position
       self.body_rod.SetPos(chrono.ChVectorD(0, self.size_rod_y/2, 0 ))
-    # set mass properties
+      # set mass properties
       self.body_rod.SetMass(self.mass_rod)
 
       self.body_rod.SetInertiaXX(chrono.ChVectorD(self.inertia_rod_x,self.inertia_rod_y,self.inertia_rod_x))
@@ -90,15 +90,13 @@ class ChronoDoublePendulum(ChronoBaseEnv):
       # TUTORIAL - Create the second rod. 
       # create it
       self.body_rod_2 = chrono.ChBody()
-    # set initial position
+      # set initial position
       self.body_rod_2.SetPos(chrono.ChVectorD(0, self.size_rod_y/2+self.size_rod_y, 0 ))
-    # set mass properties
+      # set mass properties
       self.body_rod_2.SetMass(self.mass_rod)
       self.body_rod_2.SetInertiaXX(chrono.ChVectorD(self.inertia_rod_x,self.inertia_rod_y,self.inertia_rod_x))
 # ---------------------------------------------------------------------
      
-
-
 
       self.cyl_base1= chrono.ChVectorD(0, -self.size_rod_y/2, 0 )
       self.cyl_base2= chrono.ChVectorD(0, self.size_rod_y/2, 0 )
