@@ -75,7 +75,7 @@ conda install -c anaconda tensorflow-gpu=1.14 --yes
 pip install gym
 conda install -c projectchrono/label/develop pychrono --yes
 ```
-2.4. Confirm the new environment exists on your system. It should be called "magic_tutorial".
+2.4. Confirm the new environment exists on your system. It should be called "gym_chrono_tutorial".
 ```
 conda env list
 ```
