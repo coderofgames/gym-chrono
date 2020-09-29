@@ -88,7 +88,7 @@ conda activate gym_chrono_tutorial
 pip install -e .
 ```
 
-### 3. Install the baselines repository and modules
+### 3. Install the [OpenAI Baselines repository](https://github.com/openai/baselines) and modules
 3.1 Clone the repository. Note that this should be at the same directory level as where the gym-chrono repository is.
 - If you've been following along with the previous installation steps, you'll have to move out of the gym-chrono repository.
 ```
