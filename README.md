@@ -53,7 +53,7 @@ Please follow each step of these instructions. They will help you make an Anacon
 git clone https://github.com/projectchrono/gym-chrono.git
 ```
 
-### 2. Anaconda Environment Setup
+### 2. Conda Environment Setup
 2.1 Move into the gym-chrono repository.
 ```
 cd gym-chrono
