@@ -40,7 +40,7 @@ A 6-DOF robotic arm (Comau Racer-3), the goal is minimizing the distance between
 6 actions (motor torques) and 18 observations (joints rotation, joints speed, end-effector position, target position).
 
 # Installation
-Please follow each step of these instructions. They will help you make an Anaconda environment that has all the packages you will need to work with gym-chrono.
+Please follow each step of these instructions. They will help you make an Conda environment that has all the packages you will need to work with gym-chrono.
 
 ### Requirements
 1. conda
