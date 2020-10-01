@@ -177,7 +177,7 @@ class ChronoDoublePendulum(ChronoBaseEnv):
       self.rod_pin_2.Impose_Abs_Coord(chrono.ChCoordsysD(chrono.ChVectorD(0,self.size_rod_y,0)))
  
       self.table_pin_2 = chrono.ChMarker()
-      self.body_table.AddMarker(self.table_pin_2)
+      self.body_rod.AddMarker(self.table_pin_2)
       self.table_pin_2.Impose_Abs_Coord(chrono.ChCoordsysD(chrono.ChVectorD(0,self.size_rod_y,0)))
       
       self.pin_joint_2 = chrono.ChLinkLockRevolute()
